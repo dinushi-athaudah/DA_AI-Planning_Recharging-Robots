@@ -1,0 +1,95 @@
+;; Genearated with: generator.py single-source-cover 2 1 3 10 1.8 problems/e3.pddl --random-seed 20
+;; Random seed: 20
+(define (problem recharge-single-source-cover-5502)
+(:domain recharging-robots)
+(:objects
+  location-0000 location-0001 location-0002 location-0003 location-0004 location-0005 location-0006 location-0007 location-0008 location-0009 location-0010 location-0011 location-0012 location-0013 location-0014 location-0015 location-0016 location-0017 location-0018 location-0019 location-0020 location-0021 - location
+  robot-00 robot-01 - robot
+  battery-0000 battery-0001 battery-0002 battery-0003 battery-0004 battery-0005 battery-0006 - battery-level
+  config-00 - config
+)
+(:init
+  (= (move-cost) 1)
+  (= (recharge-cost) 1)
+  (= (total-cost) 0)
+  (CONNECTED location-0006 location-0018)
+  (CONNECTED location-0004 location-0009)
+  (CONNECTED location-0003 location-0007)
+  (CONNECTED location-0004 location-0006)
+  (CONNECTED location-0012 location-0013)
+  (CONNECTED location-0005 location-0007)
+  (CONNECTED location-0000 location-0002)
+  (CONNECTED location-0004 location-0018)
+  (CONNECTED location-0000 location-0008)
+  (CONNECTED location-0002 location-0011)
+  (CONNECTED location-0002 location-0008)
+  (CONNECTED location-0001 location-0015)
+  (CONNECTED location-0018 location-0019)
+  (CONNECTED location-0014 location-0015)
+  (CONNECTED location-0003 location-0021)
+  (CONNECTED location-0005 location-0021)
+  (CONNECTED location-0010 location-0011)
+  (CONNECTED location-0009 location-0019)
+  (CONNECTED location-0001 location-0005)
+  (CONNECTED location-0002 location-0010)
+  (CONNECTED location-0019 location-0020)
+  (CONNECTED location-0001 location-0014)
+  (CONNECTED location-0001 location-0020)
+  (CONNECTED location-0013 location-0016)
+  (CONNECTED location-0010 location-0020)
+  (CONNECTED location-0015 location-0016)
+  (CONNECTED location-0018 location-0021)
+  (CONNECTED location-0006 location-0019)
+  (CONNECTED location-0003 location-0005)
+  (CONNECTED location-0020 location-0021)
+  (CONNECTED location-0014 location-0017)
+  (CONNECTED location-0005 location-0014)
+  (CONNECTED location-0010 location-0013)
+  (CONNECTED location-0011 location-0012)
+  (CONNECTED location-0005 location-0020)
+  (CONNECTED location-0001 location-0013)
+  (CONNECTED location-0002 location-0012)
+  (CONNECTED location-0001 location-0010)
+  (CONNECTED location-0010 location-0019)
+  (CONNECTED location-0013 location-0015)
+  (CONNECTED location-0006 location-0009)
+  (CONNECTED location-0016 location-0017)
+  (CONNECTED location-0007 location-0014)
+
+  (BATTERY-PREDECESSOR battery-0000 battery-0001)
+  (BATTERY-PREDECESSOR battery-0001 battery-0002)
+  (BATTERY-PREDECESSOR battery-0002 battery-0003)
+  (BATTERY-PREDECESSOR battery-0003 battery-0004)
+  (BATTERY-PREDECESSOR battery-0004 battery-0005)
+  (BATTERY-PREDECESSOR battery-0005 battery-0006)
+
+  (at robot-00 location-0012)
+  (battery robot-00 battery-0002)
+  (at robot-01 location-0012)
+  (battery robot-01 battery-0004)
+
+  (GUARD-CONFIG config-00 location-0020)
+  (GUARD-CONFIG config-00 location-0001)
+  (GUARD-CONFIG config-00 location-0005)
+  (GUARD-CONFIG config-00 location-0010)
+  (GUARD-CONFIG config-00 location-0019)
+  (GUARD-CONFIG config-00 location-0021)
+
+)
+(:goal
+  (and
+    (config-fullfilled config-00)
+  )
+)
+(:metric minimize (total-cost))
+)
+
+
+;; Cost: 4
+;; Plan:
+;; (recharge robot-01 robot-00 location-0012 battery-0004 battery-0003 battery-0002 battery-0003)
+;; (move robot-00 location-0012 location-0013 battery-0003 battery-0002)
+;; (move robot-00 location-0013 location-0010 battery-0002 battery-0001)
+;; (move robot-00 location-0010 location-0020 battery-0001 battery-0000)
+;; (stop-and-guard robot-00 location-0020)
+;; (verify-guard-config config-00)

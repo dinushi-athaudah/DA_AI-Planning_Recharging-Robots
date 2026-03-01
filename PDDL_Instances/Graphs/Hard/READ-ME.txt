@@ -1,0 +1,1 @@
+NOTE: The implementation for generating a graph for covers mode was incomplete in the implementation. Therefore a graph was not created when using that mode. Hence, graph for problem 06 is not generated

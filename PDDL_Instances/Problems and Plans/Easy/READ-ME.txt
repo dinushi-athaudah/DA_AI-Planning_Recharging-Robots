@@ -1,0 +1,1 @@
+NOTE: When using single-source-cover mode the plan is generated inside the .pddl file according to the implementation in generator.py. But a plan was retrieved from the .pddl file and a .plan file was created manually for consistency and placed in the folder similar to other problems. 
